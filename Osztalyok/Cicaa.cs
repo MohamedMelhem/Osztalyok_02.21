@@ -40,14 +40,16 @@ namespace Osztalyok
 
 			if (esely < 4)
 			{
-				szin = "zöld";
+                Console.WriteLine("A macska meglett mérgezve");
+                szin = "zöld";
 				suly -= (int)(suly * (esely / 100.0));
 				rendetlensegSzint /= 2;
 
 			}
 			else
 			{
-				suly += (int)Math.Ceiling(fogyasztas * kajasuly);
+                Console.WriteLine("A macska egy Finomat Evett MEOWW");
+                suly += (int)Math.Ceiling(fogyasztas * kajasuly);
 			}
 
 
@@ -75,37 +77,29 @@ namespace Osztalyok
             if (0 <= rendetlensegSzint && rendetlensegSzint <= 30)
             {
 				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count-3)];
+                Console.WriteLine($" {nev} éppen {tevekenyseg}");
 
-			}
+            }
             if (30 <=  rendetlensegSzint && rendetlensegSzint < 60)
             {
                 tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count-2)];
-            }
+				Console.WriteLine($" {nev} éppen {tevekenyseg}");
+			}
 			if (60 <= rendetlensegSzint && rendetlensegSzint < 90)
 			{
 				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count - 1)];
+				Console.WriteLine($" {nev} éppen {tevekenyseg}");
 			}
 			if (90 <= rendetlensegSzint )
 			{
 				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count)];
+				Console.WriteLine($" {nev} éppen {tevekenyseg}");
 			}
 
-
-
-
-
 		}
-
-		public void Eves()
-		{
-			Console.WriteLine("A macska romlott kaját evett.");
-		}
-
-
-
 		public void RomlottKaja()
 		{
-            Console.WriteLine($"A {this.nev} Nevu Macska Romlott Kaját evett ");
+            Console.WriteLine($"A {this.nev} Nevu Macska Romlott Kaját evett, nézzuk mi lett vele ");
             Eves(0.1);
 		}
 		public void EnergiaSzint()
