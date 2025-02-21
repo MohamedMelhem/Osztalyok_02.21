@@ -40,7 +40,7 @@ namespace Osztalyok
 
 			if (esely < 4)
 			{
-                Console.WriteLine("A macska meglett mérgezve");
+                Console.WriteLine($"A  {nev} macska meglett mérgezve");
                 szin = "zöld";
 				suly -= (int)(suly * (esely / 100.0));
 				rendetlensegSzint /= 2;
@@ -48,7 +48,7 @@ namespace Osztalyok
 			}
 			else
 			{
-                Console.WriteLine("A macska egy Finomat Evett MEOWW");
+                Console.WriteLine($"A {nev} macska egy Finomat Evett MEOWW");
                 suly += (int)Math.Ceiling(fogyasztas * kajasuly);
 			}
 
@@ -56,7 +56,8 @@ namespace Osztalyok
 		}
 		public void Alvas()
 		{
-			rendetlensegSzint = 0;
+            Console.WriteLine($"{nev} Elaludt ");
+            rendetlensegSzint = 0;
 			if (szin == "zöld")
 			{
 				szin = "Eredeti";
@@ -66,7 +67,8 @@ namespace Osztalyok
 		}
 		public void Ebredes()
 		{
-			rendetlensegSzint = 100;
+            Console.WriteLine($"{nev} Felébredtt");
+            rendetlensegSzint = 100;
 			ehes = true;
 		}
 		public void Jatek()
@@ -132,6 +134,10 @@ namespace Osztalyok
             }
         }
 
+		public override string? ToString()
+		{
+			return $" Macska neve : {nev} Életkora : {kor} Fajtája : {fajta} Suly : {suly} Szine : {szin}  Rendetlensege : {rendetlensegSzint}  Éhes : {ehes} SEX : {nem}" ;
+		}
 	}
 	
 }
