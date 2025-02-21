@@ -70,7 +70,6 @@ namespace Osztalyok
 		public void Jatek()
 		{
 			List<string> tevekenysegek = new List<string> { "ugral", "kapar", "rohan", "futkarozik","nyavog","zuz","tollal jatszik","cérnázik" };
-			List<string> valasztottTevekenysegek = new List<string>();
 			Random random = new Random();
 			string tevekenyseg = "";
             if (0 <= rendetlensegSzint && rendetlensegSzint <= 30)
