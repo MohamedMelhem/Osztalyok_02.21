@@ -68,7 +68,41 @@ namespace Osztalyok
 			ehes = true;
 		}
 		public void Jatek()
-		{ }
+		{
+			List<string> tevekenysegek = new List<string> { "ugral", "kapar", "rohan", "futkarozik","nyavog","zuz","tollal jatszik","cérnázik" };
+			List<string> valasztottTevekenysegek = new List<string>();
+			Random random = new Random();
+			string tevekenyseg = "";
+            if (0 <= rendetlensegSzint && rendetlensegSzint <= 30)
+            {
+				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count-3)];
+
+			}
+            if (30 <=  rendetlensegSzint && rendetlensegSzint < 60)
+            {
+                tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count-2)];
+            }
+			if (60 <= rendetlensegSzint && rendetlensegSzint < 90)
+			{
+				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count - 1)];
+			}
+			if (90 <= rendetlensegSzint )
+			{
+				tevekenyseg = tevekenysegek[random.Next(0, tevekenysegek.Count)];
+			}
+
+
+
+
+
+		}
+
+		public void Eves()
+		{
+			Console.WriteLine("A macska romlott kaját evett.");
+		}
+
+
 
 		public void RomlottKaja()
 		{
